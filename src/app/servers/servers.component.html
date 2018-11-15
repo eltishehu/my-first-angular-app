@@ -26,7 +26,11 @@
 
 <hr>
 
-<p>{{ serverCreationStatus }}</p>
+<p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
+
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
 
 <hr>
 
